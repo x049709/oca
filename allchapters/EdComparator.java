@@ -1,5 +1,4 @@
 package allchapters;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -7,7 +6,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class EdComparator {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<Rabbit> rList = new ArrayList<>();
@@ -28,7 +26,6 @@ public class EdComparator {
 		System.out.println("Sorted rabbit set");
 		rUtil.rabbitPrinter(rSet);
 	}
-
 }
 
 class Rabbit implements Comparable<Rabbit> {
@@ -54,15 +51,7 @@ class RabbitUtils {
 		return rB;
 	}
 	
-	void rabbitPrinter(Set<Rabbit> rabbits) {
-		for (Rabbit rabbit: rabbits) {
-			System.out.println("rabbit: " + rabbit.getId());
-		}
-	}
-
-	Set<Rabbit> rabbitMethodSorter (List<Rabbit> rabbits) {
-		
-		
+	Set<Rabbit> rabbitMethodSorter (List<Rabbit> rabbits) {				
 		Comparator<Rabbit> cR = (Rabbit r1, Rabbit r2) -> compareByMethod(r1, r2);
 		Set<Rabbit> rB = new TreeSet<>(cR);
 		for (Rabbit rabbit: rabbits) {
@@ -74,6 +63,11 @@ class RabbitUtils {
 	private int compareByMethod (Rabbit r1, Rabbit r2) {
 		return r1.getId() - r2.getId();
 	}
-	
+
+	void rabbitPrinter(Set<Rabbit> rabbits) {
+		for (Rabbit rabbit: rabbits) {
+			System.out.println("rabbit: " + rabbit.getId());
+		}
+	}	
 }
 

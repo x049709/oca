@@ -13,6 +13,7 @@ public class EdComparatorToo {
 		Sorted s1 = new Sorted(5, "a");
 		Sorted s2 = new Sorted(3, "b");
 		TreeSet<Sorted> t1 = new TreeSet<>(s2);
+		t1.forEach(System.out::println);
 	}
 
 }

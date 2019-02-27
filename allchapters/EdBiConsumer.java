@@ -13,13 +13,25 @@ public class EdBiConsumer {
 
 class BCMain {
 	public void runIt () {
+		System.out.println("In 3 lines:");
 		Map<String, String> env = System.getenv();
+		
 		BiConsumer<String, String> printEnv = (key, value) -> {
-			System.out.println("Env key: " + value);	
+			System.out.println("Env key: " + key + ", Env value: " + value);	
 		};
 		printEnv.accept("USER", env.get("USER"));
+		
+		System.out.println("To print all values in 2 lines:");
+		System.getenv().forEach(printEnv);
+		
+		System.out.println("To print all values in one line:");
+		//to print all values in one line
+		System.getenv().forEach((key, value) -> {
+			System.out.println("Env key: " + key + ", Env value: " + value);	
+		});
 	}
 }
+
 
 class BCUser {
 	String username;
